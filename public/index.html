@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="boxTexture" src="textures/solar-panel.jpg" />
+        <img id="sphereTexture" src="textures/earth.jpg" />
+        <img id="skyTexture" src="textures/milkyway.jpg" />
+      </a-assets>
+      <a-box
+        position="3 -3 -8"
+        rotation="0 45 0"
+        src="#boxTexture"
+        animation="property: position;
+        to: 6 3 -8;
+        dir: alternate;
+        loop: true;  
+        easing: easeInOutQuad;
+        "
+      ></a-box>
+
+      <a-box
+        position="-3 3 -8"
+        rotation="0 45 0"
+        src="#boxTexture"
+        animation="property: position;
+      to: -6 -3 -8;
+      dir: alternate;
+      loop: true;  
+      easing: easeInOutQuad;
+      "
+      ></a-box>
+
+      <a-sphere
+        position="0 1.25 -5"
+        rotation="0 45 0"
+        src="#sphereTexture"
+        animation="property: rotation;
+      to: 6 360 0;
+      loop: true; 
+      dur: 30000; 
+      easing: linear;
+      "
+      ></a-sphere>
+
+      <a-sky src="#skyTexture"></a-sky>
+      <div class="a-loader-title" style="z-index: 99">
+        Hello, World! • A-Frame
+      </div>
+    </a-scene>
+  </body>
+</html>
