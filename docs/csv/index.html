@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | web Unity Project</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/done.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">web Unity Project</div>
+      </div>
+    </div>
+
+
+    <script language="JavaScript" type="text/javascript">
+      var text = "text"
+      function print_csv(csv) {
+        var output_text = document.getElementById("content");
+        var output = document.getElementById("p");
+        output.innerText = csv;
+        if (text != csv){
+          text = csv;
+          output_text.value = output_text.value + csv+";";
+        }
+        
+      };
+      </script>
+      <br>結果:
+      <p id="p">csvdata</p> 
+      <textarea id="content" rows="1" style="width: 75px; margin-top: 2px; height:200px" readonly=""></textarea>
+  
+  </body>
+</html>
